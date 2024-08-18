@@ -1,3 +1,4 @@
+import 'package:event_manager/features/sign_in_or_sign_up/constants.dart';
 import 'package:event_manager/features/sign_in_or_sign_up/pages/sign_in_landing_page.dart';
 import 'package:event_manager/features/sign_in_or_sign_up/pages/sign_up_landing_page.dart';
 import 'package:event_manager/global%20helpers/get_screen_size.dart';
@@ -12,8 +13,8 @@ class SignInOrSignUpLandingPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
           appBar: buildAppBar(context),
-          body:
-              TabBarView(children: [SignInLandingPage(), SignUpLandingPage()])),
+          body: const TabBarView(
+              children: [SignInLandingPage(), SignUpLandingPage()])),
     );
   }
 
@@ -34,8 +35,12 @@ class SignInOrSignUpLandingPage extends StatelessWidget {
             dividerColor: Colors.transparent,
             unselectedLabelColor: Colors.grey,
             tabs: [
-              Tab(child: Text("Sign In", style: TextStyle(fontSize: 22))),
-              Tab(child: Text("Sign Up", style: TextStyle(fontSize: 22)))
+              Tab(
+                  child: Text(SignInOrSignUpConstants.signIn,
+                      style: TextStyle(fontSize: 22))),
+              Tab(
+                  child: Text(SignInOrSignUpConstants.signUp,
+                      style: TextStyle(fontSize: 22)))
             ]),
       );
 }

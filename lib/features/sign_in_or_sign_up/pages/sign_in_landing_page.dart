@@ -1,7 +1,7 @@
+import 'package:event_manager/features/home/pages/home_landing_page.dart';
 import 'package:event_manager/features/sign_in_or_sign_up/constants.dart';
 import 'package:event_manager/global%20helpers/get_screen_size.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignInLandingPage extends StatelessWidget {
@@ -9,37 +9,39 @@ class SignInLandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const SizedBox(height: 20),
-        buildHeaderText(),
-        buildEmailFormField(),
-        const SizedBox(height: 18),
-        buildPasswordFormField(),
-        buildCustomForgotPassword(),
-        buildSignInButton(),
-        buildDivider(context),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              customMaterialButton(context,
-                  color: Colors.white,
-                  text: SignInOrSignUpConstants.google,
-                  icon: FontAwesomeIcons.google,
-                  iconColor: Colors.black,
-                  textColor: Colors.black),
-              customMaterialButton(context,
-                  color: const Color(0xff2B2D5E),
-                  text: SignInOrSignUpConstants.faceBook,
-                  icon: FontAwesomeIcons.facebookF,
-                  iconColor: Colors.white,
-                  textColor: Colors.white),
-            ],
-          ),
-        )
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const SizedBox(height: 20),
+          buildHeaderText(),
+          buildEmailFormField(),
+          const SizedBox(height: 18),
+          buildPasswordFormField(),
+          buildCustomForgotPassword(),
+          buildSignInButton(getContext: context),
+          buildDivider(context),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                customMaterialButton(context,
+                    color: Colors.white,
+                    text: SignInOrSignUpConstants.google,
+                    icon: FontAwesomeIcons.google,
+                    iconColor: Colors.black,
+                    textColor: Colors.black),
+                customMaterialButton(context,
+                    color: const Color(0xff2B2D5E),
+                    text: SignInOrSignUpConstants.faceBook,
+                    icon: FontAwesomeIcons.facebookF,
+                    iconColor: Colors.white,
+                    textColor: Colors.white),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 
@@ -88,8 +90,11 @@ class SignInLandingPage extends StatelessWidget {
         ],
       );
 
-  InkWell buildSignInButton() => InkWell(
-        onTap: null,
+  InkWell buildSignInButton({required BuildContext getContext}) => InkWell(
+        onTap: () {
+          Navigator.push(getContext,
+              MaterialPageRoute(builder: (context) => HomeLandingPage()));
+        },
         child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
             child: Container(
@@ -156,7 +161,7 @@ class SignInLandingPage extends StatelessWidget {
                         color: Color(0xff2B2D5E),
                       ),
                       contentPadding: EdgeInsets.only(top: 12),
-                      hintText: SignInOrSignUpConstants.faceBook,
+                      hintText: SignInOrSignUpConstants.password,
                       border: InputBorder.none,
                       prefixIcon: Icon(
                         Icons.lock,
