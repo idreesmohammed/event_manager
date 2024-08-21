@@ -11,6 +11,7 @@ class EventManagerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      ///todo- need to add the dark and light toggle
       // theme: ThemeData(
       //   tabBarTheme: TabBarTheme(
       //       labelColor: Colors.pink[800],
@@ -21,7 +22,7 @@ class EventManagerApp extends StatelessWidget {
       //   primaryColor: Colors.pink[800], // outdated and has no effect to Tabbar
       // ),
       debugShowCheckedModeBanner: false,
-      home: const SignInOrSignUpLandingPage(),
+      home: SignInOrSignUpLandingPage(),
     );
   }
 }

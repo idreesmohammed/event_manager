@@ -1,4 +1,4 @@
-import 'package:event_manager/features/home/pages/home_landing_page.dart';
+import 'package:event_manager/features/home/pages/select_your_interests_landing_page.dart';
 import 'package:event_manager/features/sign_in_or_sign_up/constants.dart';
 import 'package:event_manager/global%20helpers/get_screen_size.dart';
 import 'package:flutter/material.dart';
