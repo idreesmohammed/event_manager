@@ -48,8 +48,17 @@ class HomeLandingPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20)),
                     child: Stack(
                       children: [
-                        const Center(
-                          child: Icon((Icons.sports_basketball)),
+                        Center(
+                          child: Container(
+                            margin: EdgeInsets.only(bottom: 20),
+                            height: 75,
+                            width: 75,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                image: DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(images[index]))),
+                          ),
                         ),
                         Align(
                           alignment: Alignment.bottomCenter,
@@ -115,9 +124,20 @@ class HomeLandingPage extends StatelessWidget {
     "Party",
     "Game",
     "Tour",
-    "Festival",
+    "Concert",
     "Food",
     "Music",
     "Beach"
+  ];
+  List<String> images = [
+    "assets/sport.png",
+    "assets/culture.png",
+    "assets/party.png",
+    "assets/game.png",
+    "assets/adventure.png",
+    "assets/festival.png",
+    "assets/food.png",
+    "assets/music.png",
+    "assets/beach.png",
   ];
 }

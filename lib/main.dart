@@ -1,7 +1,11 @@
 import 'package:event_manager/features/sign_in_or_sign_up/pages/landingpage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() {
+void main() async {
+  await WidgetsFlutterBinding.ensureInitialized();
+  await Future.delayed(const Duration(seconds: 5));
+  FlutterNativeSplash.remove();
   runApp(const EventManagerApp());
 }
 
