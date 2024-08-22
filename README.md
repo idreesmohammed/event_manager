@@ -1,16 +1,6 @@
 # event_manager
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#Developed using Flutter --> :-)
+Application used to get information of wide events happening across the cities where we live and book tickets using this App!
+![sign_in](https://github.com/user-attachments/assets/47b99470-3685-4d2a-9438-ce7b425605b9)
+![sign_up](https://github.com/user-attachments/assets/142d5527-f55c-4754-87e4-520f94077fd2)
+![interests](https://github.com/user-attachments/assets/4f56b8d2-e52f-4104-a2d3-55ee2d9edbe0)
