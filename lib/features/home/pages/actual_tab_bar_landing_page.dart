@@ -12,6 +12,7 @@ class ActualTabBarLandingPage extends GetView<TabBarHomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: CurvedNavigationBar(
+            animationDuration: Duration(milliseconds: 300),
             color: GlobalConstants.globalColorTheme,
             backgroundColor: Colors.transparent,
             height: 60,
@@ -26,9 +27,19 @@ class ActualTabBarLandingPage extends GetView<TabBarHomeController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              padding: EdgeInsets.only(left: 10),
               height: GlobalConstants.getScreenHeight(context) * 0.2,
               width: double.infinity,
-              color: Colors.red,
+              color: GlobalConstants.globalColorTheme,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: IconButton(
+                    onPressed: null,
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
+                    )),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
