@@ -1,4 +1,5 @@
 import 'package:event_manager/features/home/interests_page_constants.dart';
+import 'package:event_manager/features/home/pages/actual_tab_bar_landing_page.dart';
 import 'package:event_manager/global%20helpers/get_screen_size.dart';
 import 'package:flutter/material.dart';
 
@@ -86,7 +87,12 @@ class HomeLandingPage extends StatelessWidget {
             ),
           ),
           InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ActualTabBarLandingPage()));
+              },
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 25),

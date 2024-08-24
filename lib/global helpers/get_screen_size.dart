@@ -19,4 +19,5 @@ class GlobalConstants {
       color: Color.fromARGB(255, 4, 11, 119));
   static const TextStyle globalHeadersStylButton =
       TextStyle(fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white);
+  static const Color globalColorTheme = Color(0xff2B2D5E);
 }

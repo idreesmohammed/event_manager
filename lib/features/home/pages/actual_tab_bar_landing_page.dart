@@ -1,0 +1,79 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:event_manager/features/home/controller/tab_bar_home_controller.dart';
+import 'package:event_manager/features/home/interests_page_constants.dart';
+
+import 'package:event_manager/global%20helpers/get_screen_size.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class ActualTabBarLandingPage extends GetView<TabBarHomeController> {
+  final TabBarHomeController controller = Get.put(TabBarHomeController());
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        bottomNavigationBar: CurvedNavigationBar(
+            color: GlobalConstants.globalColorTheme,
+            backgroundColor: Colors.transparent,
+            height: 60,
+            index: controller.tabBarIndex.value,
+            onTap: (val) {
+              print(val);
+              controller.onTabChange(currentIndex: val);
+              switch (controller.tabBarIndex.value) {}
+            },
+            items: InterestsPageConstants.navBarIcons),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: GlobalConstants.getScreenHeight(context) * 0.2,
+              width: double.infinity,
+              color: Colors.red,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Name', style: GlobalConstants.globalHeadersStyle),
+                  TextFormField(
+                      decoration: InputDecoration(hintText: "Mohammed Idrees")),
+                  SizedBox(height: 30),
+                  Text('Your Phone', style: GlobalConstants.globalHeadersStyle),
+                  TextFormField(
+                      decoration: InputDecoration(hintText: "1234567890")),
+                  SizedBox(height: 30),
+                  Text('Unique Id', style: GlobalConstants.globalHeadersStyle),
+                  TextFormField(
+                      decoration: InputDecoration(hintText: "1234567890")),
+                  SizedBox(
+                    height: 200,
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 25),
+                        child: Container(
+                          height: 55,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                              color: const Color(0xff2B2D5E),
+                              borderRadius: BorderRadius.circular(30)),
+                          child: const Center(
+                            child: Text(
+                              "Edit",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        )),
+                  )
+                ],
+              ),
+            ),
+          ],
+        ));
+  }
+}
